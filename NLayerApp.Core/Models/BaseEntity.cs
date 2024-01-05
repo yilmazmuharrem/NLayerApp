@@ -1,6 +1,4 @@
-﻿
-
-namespace NLayerApp.Core
+﻿namespace NLayerApp.Core.Models
 {
     public abstract class BaseEntity
     {
