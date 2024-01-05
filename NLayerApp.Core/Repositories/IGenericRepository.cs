@@ -9,7 +9,7 @@ namespace NLayerApp.Core.Repositories
         Task<T> GetByIdAsync(int id,CancellationToken cancellationToken);
         IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
         IQueryable<T> Where(Expression<Func<T,bool>> expression);
-        bool AnyAsync(Expression<Func<T, bool>> expression,CancellationToken cancellationToken);
+        Task<bool> AnyAsync(Expression<Func<T, bool>> expression,CancellationToken cancellationToken);
         Task AddAsync(T entity,CancellationToken cancellationToken);
         Task AddRangeAsync(IEnumerable<T> entities,CancellationToken cancellationToken);
         void Update(T entity);
