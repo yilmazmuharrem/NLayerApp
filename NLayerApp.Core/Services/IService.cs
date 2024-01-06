@@ -13,9 +13,9 @@ namespace NLayerApp.Core.Services
         Task<T> GetByIdAsync(int id, CancellationToken cancellationToken);
         Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken);
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
-        bool AnyAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken);
-        Task AddAsync(T entity, CancellationToken cancellationToken);
-        Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken);
+        Task<bool> AnyAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken);
+        Task<T> AddAsync(T entity, CancellationToken cancellationToken);
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken);
         Task UpdateAsync(T entity,CancellationToken cancellationToken);
         Task RemoveAsync(T entity, CancellationToken cancellationToken);
         Task RemoveRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken);

@@ -17,13 +17,16 @@ namespace NLayerApp.Repository.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); // configuratiın yaptığımız classları ıentityconfiguratiın interface sayesinde assemblyleri bulup buraya ekliiyor
-            // alternatif olarak              modelBuilder.ApplyConfiguration(new Category());
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); 
+            // configuratiın yaptığımız classları ıentityconfiguratiın interface sayesinde assemblyleri bulup buraya ekliiyor
+            // alternatif olarak   modelBuilder.ApplyConfiguration(new Category());
 
 
-            modelBuilder.Entity<ProductFeature>().HasData(
-                new ProductFeature() { Id = 1, Height = 100, Width = 50, ProductId = 1, Color = "Red" },
-                new ProductFeature() { Id = 2, Height = 230, Width = 30, ProductId = 2, Color = "Blue" });
+
+            // BU ŞEKİLDE DE OLDUĞU GİBİ CLEAN CODE YAZMA AÇISINDAN SEEDS ADLI KLASÖRDE YAZMAK DAHA TEMİZ KOD YAZMAMIZI SAĞLAR ! 
+            //modelBuilder.Entity<ProductFeature>().HasData(
+            //    new ProductFeature() { Id = 1, Height = 100, Width = 50, ProductId = 1, Color = "Red" },
+            //    new ProductFeature() { Id = 2, Height = 230, Width = 30, ProductId = 2, Color = "Blue" });
 
 
 
