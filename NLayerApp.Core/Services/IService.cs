@@ -10,7 +10,7 @@ namespace NLayerApp.Core.Services
     public interface IService<T> where T : class
     {
 
-        Task<T> GetByIdAsync(int id, CancellationToken cancellationToken);
+        Task<T> GetByIdAsync(int id);
         Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken);
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken);

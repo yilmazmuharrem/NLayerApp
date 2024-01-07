@@ -43,9 +43,9 @@ namespace NLayerApp.Service.Services
             return await _repository.GetAll().ToListAsync();
         }
 
-        public async Task<T> GetByIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id, cancellationToken);
+            return await _repository.GetByIdAsync(id);
         }
 
         public async Task RemoveAsync(T entity, CancellationToken cancellationToken)
